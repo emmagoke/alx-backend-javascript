@@ -1,8 +1,8 @@
 // Implementation of a class named Currency
 export default class Currency {
-  constructor(code, string) {
+  constructor(code, name) {
     this.code = code;
-    this.string = string;
+    this.name = name;
   }
 
   // getter and setter for code
@@ -14,16 +14,16 @@ export default class Currency {
     this._code = value;
   }
 
-  // getter and setter for string
-  get string() {
-    return this._string;
+  // getter and setter for name
+  get name() {
+    return this._name;
   }
 
-  set string(value) {
-    this._string = value;
+  set name(value) {
+    this._name = value;
   }
 
   displayFullCurrency() {
-    return `${this.string} (${this.code})`;
+    return `${this.name} (${this.code})`;
   }
 }

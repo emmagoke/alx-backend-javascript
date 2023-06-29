@@ -49,7 +49,7 @@ export default class HolbertonCourse {
     //     throw new TypeError('Students must contain strings');
     //   }
     // }
-    if (! students.every((student) => typeof student !== 'string')) {
+    if (students.every((student) => typeof student !== 'string')) {
       throw new TypeError('Students must contain strings');
     }
     this._students = students;

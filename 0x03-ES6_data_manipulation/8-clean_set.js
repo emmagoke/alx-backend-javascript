@@ -4,7 +4,7 @@ starts with a string
 */
 export default function cleanSet(set, substring) {
   // If substring is an empty string
-  if (!set || !substring || !(set instanceof Set)) {
+  if (!set || !substring || !(set instanceof Set) || typeof substring !== 'string') {
     return '';
   }
   const output = [];

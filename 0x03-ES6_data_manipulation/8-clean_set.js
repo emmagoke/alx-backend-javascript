@@ -8,7 +8,7 @@ export default function cleanSet(set, substring) {
     return '';
   }
   const output = [];
-  for (const string of set) {
+  for (const string of set.values()) {
     if (string.startsWith(substring)) {
       output.push(string.substring(substring.length));
     }

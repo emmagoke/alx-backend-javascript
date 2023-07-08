@@ -26,7 +26,12 @@ export function printTeacher(firstName: string, lastName: string): string {
   return `${firstName[0]}.  ${lastName}`;
 }
 
-export class StudentClass {
+export interface StudentClassMethods {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+export class StudentClass implements StudentClassMethods {
   firstName: string;
   lastName: string;
 

@@ -1,11 +1,11 @@
-// This script contains a function that read file synchronously
+/* This script contains a function that read file synchronously */
 const fs = require('fs');
 
 function countStudents(path) {
   try {
     let total = 0;
-    const student = {}; const
-      studentCount = {};
+    const student = {};
+    const studentCount = {};
 
     let files = fs.readFileSync(path);
     files = files.toString();

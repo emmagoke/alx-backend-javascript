@@ -1,10 +1,16 @@
 // This script creates a simple server in node using http module
-const app = require('http');
+const http = require('http');
 
-app.createServer((request, response) => {
+const HOST = 'localhost';
+const PORT = 1245;
+
+const app = http.createServer((request, response) => {
   // if the response status code is 200
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
+  response.writeHead(200);
+  // response.setheader("Content-Type", "text/plain")
   response.end('Hello Holberton School!');
-}).listen(1245);
+});
+
+app.listen(PORT, HOST);
 
 module.exports = app;

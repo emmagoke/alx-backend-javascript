@@ -1,3 +1,4 @@
+// This script contains a function that read file synchronously
 const fs = require('fs');
 
 function countStudents(path) {

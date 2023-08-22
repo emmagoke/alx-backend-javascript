@@ -2,30 +2,31 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
-    let total = 0; let cs = 0; let
-      swe = 0;
-    const csList = []; const
-      sweList = [];
+    let total = 0;
+    const student = {}; const
+      studentCount = {};
+
     let files = fs.readFileSync(path);
     files = files.toString();
     const filesList = files.split('\n');
+
     for (const file of filesList.slice(1)) {
       total += 1;
       const content = file.trim().split(',');
-      if (content[3] === 'CS') {
-        cs += 1;
-        csList.push(content[0]);
-      } else if (content[3] === 'SWE') {
-        swe += 1;
-        sweList.push(content[0]);
+      // this checks if CS or SWE are keys in the object student
+      if (Object.prototype.hasOwnProperty.call(student, content[3])) {
+        studentCount[content[3]] += 1;
+        student[content[3]].push(content[0]);
+      } else {
+        studentCount[content[3]] = 1;
+        student[content[3]] = [content[0]];
       }
     }
+
     process.stdout.write(`Number of students: ${total}\n`);
-    process.stdout.write(`Number of students in CS: ${cs}.\
- List: ${csList.join(', ')}\n`);
-    process.stdout.write(`Number of students in SWE: ${swe}.\
- List: ${sweList.join(', ')}\n`);
-    // console.log(files_list[1:], total);
+    for (const [key, value] of Object.entries(studentCount)) {
+      console.log(`Number of students in ${key}: ${value}. List: ${student[key].join(', ')}`);
+    }
   } catch (err) {
     throw new Error('Cannot load the database');
   }

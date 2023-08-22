@@ -51,7 +51,7 @@ const app = http.createServer((request, response) => {
 
     case '/students':
       response.write('This is the list of our students\n');
-      countStudents(process.argv[2].toString())
+      countStudents(process.argv[2])
         .then((result) => {
           response.end(result.slice(0, -1));
         })

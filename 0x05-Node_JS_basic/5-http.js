@@ -55,9 +55,9 @@ const app = http.createServer((request, response) => {
         .then((result) => {
           response.end(result.slice(0, -1));
         })
-        .catch(() => {
+        .catch((error) => {
           response.writeHead(404);
-          response.end('Cannot load the database');
+          response.end(error.toString());
         });
       break;
     default:

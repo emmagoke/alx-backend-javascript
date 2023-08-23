@@ -54,9 +54,9 @@ app.get('/students', (request, response) => {
     .then((result) => {
       response.send(result.slice(0, -1));
     })
-    .catch(() => {
+    .catch((error) => {
       response.status(404);
-      response.send('Cannot load the database');
+      response.send(error.toString());
     });
 });
 

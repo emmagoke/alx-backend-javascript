@@ -24,7 +24,7 @@ function countStudents(path) {
       }
     }
 
-    process.stdout.write(`Number of students: ${total}\n`);
+    console.log(`Number of students: ${total}`);
     for (const [key, value] of Object.entries(studentCount)) {
       console.log(`Number of students in ${key}: ${value}. List: ${student[key].join(', ')}`);
     }

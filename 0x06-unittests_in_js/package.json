@@ -4,7 +4,7 @@
   "description": "This is an ALX SE program project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,10 @@
   "author": "Emmanuel Olagoke",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emmagoke/alx-backend-javascript/issues"
+    "url": "https://github.com/emmagoke/alx-backend-javascript/tree/master/0x06-unittests_in_js/issues"
   },
-  "homepage": "https://github.com/emmagoke/alx-backend-javascript#readme"
+  "homepage": "https://github.com/emmagoke/alx-backend-javascript/tree/master/0x06-unittests_in_js#readme",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
 }
